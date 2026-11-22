@@ -16,7 +16,7 @@ document.querySelectorAll('.nav a').forEach(link => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 // ===================================
-// PŪGĪPHALA ENQUIRY FORM
+// PŪGĪPHALA ENQUIRY FORM - DIAGNOSTIC
 // ===================================
 
 const enquiryForm = document.getElementById("enquiry-form");
@@ -28,16 +28,21 @@ if (enquiryForm && enquiryFrame && formNote) {
   let enquiryPending = false;
 
   enquiryForm.addEventListener("submit", function () {
-
     enquiryPending = true;
 
-    formNote.textContent = "Submitting your enquiry...";
+    console.log("Enquiry submitted. Waiting for iframe...");
 
+    formNote.textContent = "Submitting your enquiry...";
   });
 
   enquiryFrame.addEventListener("load", function () {
 
-    if (!enquiryPending) return;
+    console.log("IFRAME LOAD EVENT FIRED");
+
+    if (!enquiryPending) {
+      console.log("No pending enquiry.");
+      return;
+    }
 
     enquiryPending = false;
 
@@ -46,6 +51,7 @@ if (enquiryForm && enquiryFrame && formNote) {
 
     enquiryForm.reset();
 
+    console.log("Success message displayed.");
   });
 
 }
