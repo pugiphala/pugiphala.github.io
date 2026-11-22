@@ -25,14 +25,13 @@ const formNote = document.getElementById("form-note");
 
 if (enquiryForm && enquiryFrame && formNote) {
 
-  let enquirySubmitted = false;
-
   enquiryForm.addEventListener("submit", function () {
-    enquirySubmitted = true;
     formNote.textContent = "Submitting your enquiry...";
   });
 
   window.addEventListener("message", function (event) {
+
+    console.log("Enquiry response received:", event.data);
 
     if (!event.data ||
         event.data.type !== "pugiphala-enquiry") {
@@ -49,10 +48,8 @@ if (enquiryForm && enquiryFrame && formNote) {
     } else {
 
       formNote.textContent =
-        "Sorry! We couldn't submit your enquiry. Please try again or email us directly.";
+        "Sorry! We couldn't submit your enquiry. Please try again.";
 
     }
-
-    enquirySubmitted = false;
   });
 }
