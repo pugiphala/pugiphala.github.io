@@ -25,31 +25,27 @@ const formNote = document.getElementById("form-note");
 
 if (enquiryForm && enquiryFrame && formNote) {
 
+  let enquiryPending = false;
+
   enquiryForm.addEventListener("submit", function () {
+
+    enquiryPending = true;
+
     formNote.textContent = "Submitting your enquiry...";
+
   });
 
-  window.addEventListener("message", function (event) {
+  enquiryFrame.addEventListener("load", function () {
 
-    console.log("Enquiry response received:", event.data);
+    if (!enquiryPending) return;
 
-    if (!event.data ||
-        event.data.type !== "pugiphala-enquiry") {
-      return;
-    }
+    enquiryPending = false;
 
-    if (event.data.status === "success") {
+    formNote.textContent =
+      "Thank you! Your enquiry has been submitted successfully. We will contact you soon.";
 
-      formNote.textContent =
-        "Thank you! Your enquiry has been submitted successfully. We will contact you soon.";
+    enquiryForm.reset();
 
-      enquiryForm.reset();
-
-    } else {
-
-      formNote.textContent =
-        "Sorry! We couldn't submit your enquiry. Please try again.";
-
-    }
   });
+
 }
