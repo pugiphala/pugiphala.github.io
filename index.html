@@ -15,7 +15,54 @@
   <div class="announcement">Rooted in Karnataka. Building a smarter arecanut ecosystem.</div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Pugiphala home">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 39V18M24 22C13 21 8 15 7 8c9 0 16 4 17 14M24 19C25 10 32 5 41 5c-1 9-7 15-17 16M24 29C15 27 11 23 10 17c8 1 13 4 14 12M24 31c7-7 13-8 19-6-3 7-9 11-19 10"/><path d="M18 40h12"/></svg></span>
+      <span class="brand-mark" aria-hidden="true">
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="nutGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a9b95b"/>
+      <stop offset="100%" stop-color="#426b32"/>
+    </linearGradient>
+
+    <linearGradient id="nutOrange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e9a34b"/>
+      <stop offset="100%" stop-color="#a94e20"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main stalk -->
+  <path d="M24 5 C23 15 24 27 24 43"
+        stroke="#536b35" stroke-width="1.8" fill="none"/>
+
+  <!-- Upper leaves -->
+  <path d="M24 12 C15 5 8 7 5 10 C12 15 18 16 24 15"
+        fill="#668c4d"/>
+  <path d="M24 12 C30 5 38 5 43 8 C38 15 31 17 24 15"
+        fill="#799b53"/>
+
+  <!-- Arecanut stems -->
+  <g stroke="#79613a" stroke-width="1.1" fill="none">
+    <path d="M24 14 L15 25 L11 32"/>
+    <path d="M24 14 L21 28 L19 37"/>
+    <path d="M24 14 L29 27 L34 35"/>
+    <path d="M24 14 L36 24 L39 31"/>
+    <path d="M24 14 L25 30 L26 39"/>
+  </g>
+
+  <!-- Arecanuts -->
+  <g stroke="#80552d" stroke-width=".5">
+    <ellipse cx="14" cy="27" rx="4.2" ry="5.5" fill="url(#nutGreen)" transform="rotate(-25 14 27)"/>
+    <ellipse cx="10" cy="34" rx="4" ry="5" fill="url(#nutOrange)" transform="rotate(-20 10 34)"/>
+    <ellipse cx="21" cy="31" rx="4.2" ry="5.5" fill="url(#nutGreen)"/>
+    <ellipse cx="19" cy="39" rx="3.8" ry="4.5" fill="url(#nutOrange)"/>
+    <ellipse cx="30" cy="30" rx="4.2" ry="5.5" fill="url(#nutOrange)" transform="rotate(-15 30 30)"/>
+    <ellipse cx="35" cy="36" rx="4" ry="5" fill="url(#nutGreen)" transform="rotate(20 35 36)"/>
+    <ellipse cx="26" cy="39" rx="4" ry="5" fill="url(#nutGreen)"/>
+    <ellipse cx="39" cy="29" rx="3.5" ry="4.5" fill="url(#nutOrange)"/>
+  </g>
+
+</svg>
+</span>
       <span class="brand-word">PŪGĪPHALA<span>ಪೂಗೀಫಲ</span></span>
     </a>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
